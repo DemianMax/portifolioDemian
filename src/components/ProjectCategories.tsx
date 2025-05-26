@@ -8,9 +8,9 @@ const ProjectCategories = () => {
   const [activeCategory, setActiveCategory] = useState('ux');
 
   const categories = [
-    { id: 'ux', name: 'UX Design', icon: Monitor, color: 'purple' },
-    { id: 'illustration', name: 'Ilustração', icon: Palette, color: 'blue' },
-    { id: 'infographic', name: 'Infografia', icon: BarChart3, color: 'green' }
+    { id: 'ux', name: 'UX Design', icon: Monitor, color: 'yellow' },
+    { id: 'illustration', name: 'Ilustração', icon: Palette, color: 'yellow' },
+    { id: 'infographic', name: 'Infografia', icon: BarChart3, color: 'yellow' }
   ];
 
   const projects = {
@@ -65,28 +65,28 @@ const ProjectCategories = () => {
   };
 
   return (
-    <section id="projects" className="py-20 px-4 bg-white">
+    <section id="projects" className="py-20 px-4 bg-slate-800">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Projetos em Destaque
           </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
             Uma seleção dos meus trabalhos mais relevantes em UX Design, 
             Ilustração e Infografia.
           </p>
         </div>
 
         <div className="flex justify-center mb-12">
-          <div className="flex bg-gray-100 rounded-full p-1">
+          <div className="flex bg-slate-700 p-1">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-full transition-all duration-300 ${
+                className={`flex items-center space-x-2 px-6 py-3 transition-all duration-300 ${
                   activeCategory === category.id
-                    ? `bg-${category.color}-600 text-white shadow-lg`
-                    : 'text-slate-600 hover:text-slate-800'
+                    ? 'bg-yellow-400 text-slate-900'
+                    : 'text-slate-300 hover:text-white'
                 }`}
               >
                 <category.icon className="w-5 h-5" />
@@ -98,7 +98,7 @@ const ProjectCategories = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects[activeCategory].map((project, index) => (
-            <Card key={index} className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <Card key={index} className="group overflow-hidden bg-slate-700 border-slate-600 hover:border-yellow-400 transition-all duration-300">
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
@@ -107,24 +107,24 @@ const ProjectCategories = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Button size="sm" variant="secondary" className="bg-white/90 text-slate-800 hover:bg-white">
+                  <Button size="sm" className="bg-yellow-400 text-slate-900 hover:bg-yellow-500">
                     <ExternalLink className="w-4 h-4" />
                   </Button>
                 </div>
               </div>
               
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-slate-800 mb-2">
+                <h3 className="text-xl font-bold text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-slate-600 mb-4 leading-relaxed">
+                <p className="text-slate-400 mb-4 leading-relaxed">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className={`px-3 py-1 bg-${categories.find(c => c.id === activeCategory)?.color}-100 text-${categories.find(c => c.id === activeCategory)?.color}-600 rounded-full text-sm font-medium`}
+                      className="px-3 py-1 bg-slate-600 text-slate-300 text-sm font-medium"
                     >
                       {tag}
                     </span>

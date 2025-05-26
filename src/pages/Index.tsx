@@ -9,7 +9,7 @@ import ContactForm from '../components/ContactForm';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-slate-900">
       <Header />
       <HeroSection />
       <ProjectCategories />

@@ -14,21 +14,21 @@ const HeroSection = () => {
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-20">
+    <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-20 bg-slate-900">
       <div className="max-w-6xl mx-auto text-center">
         <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-slate-800 mb-4 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
             Design que
-            <span className="text-transparent bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text">
+            <span className="text-yellow-400">
               {" "}conecta
             </span>
           </h1>
           
-          <h2 className="text-2xl md:text-3xl text-slate-700 mb-6 font-medium">
+          <h2 className="text-2xl md:text-3xl text-slate-300 mb-6 font-medium">
             UX/UI Designer • Ilustradora • Infografista
           </h2>
 
-          <p className="text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-slate-400 mb-8 max-w-3xl mx-auto leading-relaxed">
             Criando experiências digitais intuitivas que unem design centrado no usuário 
             com storytelling visual impactante.
           </p>
@@ -37,7 +37,7 @@ const HeroSection = () => {
             {skills.map((skill, index) => (
               <span
                 key={index}
-                className="px-4 py-2 bg-white/70 backdrop-blur-sm border border-purple-200 text-slate-700 rounded-full text-sm font-medium hover:bg-purple-100 transition-colors"
+                className="px-4 py-2 bg-slate-800 border border-slate-600 text-slate-300 text-sm font-medium hover:border-yellow-400 hover:text-yellow-400 transition-colors"
               >
                 {skill}
               </span>
@@ -45,12 +45,12 @@ const HeroSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full">
+            <Button size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-slate-900 px-8 py-3 font-semibold">
               Ver Projetos
               <ArrowDown className="ml-2 w-4 h-4" />
             </Button>
             
-            <Button variant="outline" size="lg" className="px-8 py-3 rounded-full border-2 border-slate-300 hover:border-purple-600 hover:text-purple-600">
+            <Button variant="outline" size="lg" className="px-8 py-3 border-2 border-slate-600 text-slate-300 hover:border-yellow-400 hover:text-yellow-400 bg-transparent">
               <Download className="mr-2 w-4 h-4" />
               Download CV
             </Button>
